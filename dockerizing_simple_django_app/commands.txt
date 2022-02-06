@@ -1,0 +1,5 @@
+#build a docker imageuse the tag keyword to name the image
+docker build --tag dockerize-simple-django-project .
+
+#use this to map across port 8000 and connect it with out localhost on the computer
+docker run --publish 8000:8000 dockerize-simple-django-project
