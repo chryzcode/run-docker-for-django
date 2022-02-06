@@ -1,0 +1,18 @@
+# version for docker compose
+version: "3.8"
+# the services you want to run
+services:
+  app:
+    build: .
+    volumes:
+    #connect to working directory in the docker environment
+      - .:/another-app
+    #run on the 8000 port
+    ports:
+      - 8000:8000
+      # give the docker image a name used in the Dockerfile
+    image: app:another-app
+    #name of the container
+    container_name: another-app-container
+    #command to runserver of all ip addresses in the service to port 8000
+    command: python manage.py runserver 0.0.0.0:8000
