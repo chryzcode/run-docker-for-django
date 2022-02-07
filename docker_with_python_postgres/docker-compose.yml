@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  another-app:
+    build: .
+    volumes:
+      - .:/another-app-data
+    ports:
+      - "8080:8080"
+    image: another-app:test-another-app
+    container_name: another-app-container
+    command: python manage.py runserver 0.0.0.0:8000
+  db:
+  image: postgres
+  volumes:
+    - ./data/db:/var/lib/postgresql/data
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: postgres
+  container_name: another_app_container_db
