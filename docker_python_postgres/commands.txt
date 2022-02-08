@@ -1,0 +1,11 @@
+#build a docker image
+docker-compose build
+
+#remove the image created and create a django project
+docker-compose run --rm <name of the image> django-admin startproject <name of the django of the project you want to create> .
+
+#to startup the containers  
+docker-compose up
+
+#to run commands on the image container and your project
+docker exec -it <name of the image container> /bin/bash

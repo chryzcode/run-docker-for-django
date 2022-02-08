@@ -1,7 +1,0 @@
-docker-compose build
-
-docker-compose run --rm another-app django-admin startproject docker_with_django_postgresql .
-
-docker-compose up
-
-docker exec -it 
